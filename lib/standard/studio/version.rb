@@ -1,0 +1,5 @@
+module Standard
+  module Studio
+    VERSION = "0.1.0"
+  end
+end
