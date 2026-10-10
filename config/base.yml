@@ -52,3 +52,34 @@ Studio/ClassStructure:
     - public_methods
     - protected_methods
     - private_methods
+
+Studio/ClassMethodsDefinitions:
+  Description: "Define class methods inside `class << self`."
+  Enabled: true
+  EnforcedStyle: self_class
+  SupportedStyles:
+    - def_self
+    - self_class
+
+Studio/NoUnless:
+  Description: "Use `if !` instead of `unless`."
+  Enabled: true
+
+Studio/WordArray:
+  Description: "Write arrays of strings with brackets, not `%w`."
+  Enabled: true
+  EnforcedStyle: brackets
+  SupportedStyles:
+    - percent
+    - brackets
+  MinSize: 2
+  WordRegex: !ruby/regexp '/\A(?:\p{Word}|\p{Word}-\p{Word}|\n|\t)+\z/'
+
+Studio/SymbolArray:
+  Description: "Write arrays of symbols with brackets, not `%i`."
+  Enabled: true
+  EnforcedStyle: brackets
+  SupportedStyles:
+    - percent
+    - brackets
+  MinSize: 2
