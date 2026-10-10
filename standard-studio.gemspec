@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email = ["mackenzie@itsusstudio.com"]
 
   spec.summary = "ITSUSSTUDIO rules for Standard Ruby"
-  spec.description = "A Standard Ruby plugin carrying the studio's own cops, starting with class layout order."
+  spec.description = "The studio's lint stack in one gem: Standard, its Rails plugin, the factory_bot and rake cops, and the studio's own rules."
   spec.homepage = "https://github.com/itsusstudio/standard-studio"
   spec.required_ruby_version = ">= 3.3"
 
@@ -20,4 +20,8 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "lint_roller", "~> 1.0"
   spec.add_dependency "rubocop", ">= 1.72"
+  spec.add_dependency "rubocop-factory_bot", ">= 2.27"
+  spec.add_dependency "rubocop-rake", ">= 0.7"
+  spec.add_dependency "standard", ">= 1.50"
+  spec.add_dependency "standard-rails", ">= 1.3"
 end

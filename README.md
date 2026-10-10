@@ -4,17 +4,17 @@ ITSUSSTUDIO rules for [Standard Ruby](https://github.com/standardrb/standard), p
 
 ## Install
 
-Standard has no way to share one `.standard.yml` between repositories, and a plugin cannot switch on other plugins. So each app adds the gem and lists its plugins itself.
-
 Gemfile, development group:
 
-    gem "standard", require: false
-    gem "standard-rails"
-    gem "rubocop-factory_bot", require: false
-    gem "rubocop-rake", require: false
     gem "standard-studio", github: "itsusstudio/standard-studio", require: false
 
-`standard-performance` and `standard-custom` are not listed: Standard depends on them and loads them itself.
+That one line brings the whole lint stack: `standard`, `standard-rails`, `rubocop-factory_bot` and `rubocop-rake` are dependencies of this gem, so an app does not list them. `standard-performance` and `standard-custom` come with Standard itself.
+
+An app that needs a particular version of one of them adds its own line beside this one, for example `gem "standard", "1.56.0"`.
+
+Because those gems are no longer direct dependencies, Dependabot stops opening routine update pull requests for them. They move when you run `bundle update standard-studio`, or `bundle update standard` by name.
+
+Standard has no way to share one `.standard.yml` between repositories, and a plugin cannot switch on other plugins, so each app still lists its plugins itself.
 
 ## Example `.standard.yml`
 
